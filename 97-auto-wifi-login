@@ -1,0 +1,18 @@
+#!/bin/bash
+
+WIFI_SSID="Tk-gjestenett"
+PYTHON_ENV="/usr/bin/python3"
+SCRIPT_PATH="/usr/local/bin/wifi-autologon.py"
+LOG_FILE="/var/log/wifi-auto-login.log"
+
+echo "$(date) - Script triggered: Interface: $1, Event: $2" >> $LOG_FILE
+
+if [ "$2" == "up" ] || [ "$2" == "connectivity-change" ]; then
+    CURRENT_SSID=$(nmcli -t -f active,ssid dev wifi | grep "^yes" | cut -d':' -f2)
+    echo "$(date) - Detected SSID: $CURRENT_SSID" >> $LOG_FILE
+
+    if [ "$CURRENT_SSID" == "$WIFI_SSID" ]; then
+        echo "$(date) - Connected to $WIFI_SSID, running login script..." >> $LOG_FILE
+        $PYTHON_ENV $SCRIPT_PATH >> $LOG_FILE 2>&1
+    fi
+fi
