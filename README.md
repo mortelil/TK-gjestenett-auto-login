@@ -4,7 +4,9 @@ Script to automatically log into TK-gjestenett - Trondheim kommunes guest wifi. 
 You need to create the file /etc/wifi-login.conf containing the following:
 
 [DEFAULT]
+
 WIFI_USERNAME=your username here
+
 WIFI_PASSWORD=your password here
 
 chmod 600 the file.
