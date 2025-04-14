@@ -1,5 +1,5 @@
 # TK-gjestenett-auto-login
-Script to automatically log into TK-gjestenett - Trondheim kommunes guest wifi. If your using a private computer running Linux at work and can't log into TK-nett.
+Script to automatically log into the captive portal for TK-gjestenett - Trondheim kommunes guest wifi. This is for using a private computer running Linux at work, and being unable to use TK-nett.
 
 You need to create the file /etc/wifi-login.conf containing the following:
 
