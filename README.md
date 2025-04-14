@@ -11,5 +11,7 @@ You need to create the file /etc/wifi-login.conf containing the following:
 
 chmod 600 the file.
 
+
 Add wifi-autologon.py to /usr/local/bin/
+
 Add 97-auto-wifi-login to /etc/NetworkManager/dispatcher.d/
